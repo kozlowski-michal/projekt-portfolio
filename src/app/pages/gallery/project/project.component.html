@@ -1,0 +1,21 @@
+<div class="container">
+    <mat-card class="project-card">
+        <mat-card-header> 
+            <h1>{{project?.name}}</h1>
+        </mat-card-header>
+        <!-- zapisywanie obrazów jeszcze nie zostało zaimplementowane, wyświetla się zastępczy obrazek -->
+        <img 
+            class="project-img" 
+            src= "https://i.dobrzemieszkaj.pl/i/26/00/93/r3/1920/dobrze-mieszkaj-lubi-dzieci-wyniki-konkursu-plastycznego-dla-dzieci-na-4-design-days-8.jpg" 
+            alt="House"
+        />
+        <mat-card-content class="content">
+            {{project.about}}
+        </mat-card-content>
+        <mat-card-actions class="flex">
+            <button mat-button  (click)="goBack()">Powrót</button>
+            <span class="spacer"></span>
+            <mat-card-subtitle>{{project?.date}}</mat-card-subtitle>
+        </mat-card-actions>
+    </mat-card>
+</div>

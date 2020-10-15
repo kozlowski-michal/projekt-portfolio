@@ -1,0 +1,15 @@
+<div *ngIf="(isActive | async); else showGalerry" cdkDropList cdkDropListOrientation="horizontal" class="edit-list" (cdkDropListDropped)="drop($event)">
+  <div class="edit-box" *ngFor="let project of projects" fxFlex="230px" cdkDrag>
+    <app-project-item (delete)="delete($event)" [project]="project" [editing]="(isActive | async)"></app-project-item>
+  </div>
+  <div class="edit-box" fxFlex="230px">  
+    <app-project-item-add (click)="add()"></app-project-item-add>
+  </div>
+</div>
+<ng-template #showGalerry>
+  <div class="container" fxLayout="row wrap" fxLayoutWrap fxLayoutGap="10px" fxLayoutAlign="center">
+    <div fxFlex="350px" *ngFor="let project of projects">
+      <app-project-item [project]="project" [editing]="(isActive | async)"></app-project-item>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "portfolio-c18cf": {
+      "hosting": {
+        "portfolio": [
+          "portfolio-c18cf"
+        ]
+      }
+    }
+  }
+}

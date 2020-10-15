@@ -1,0 +1,8 @@
+<div class="mat-app-background flex-container" fxFill fxLayoutGap="7px" fxLayout="column" [ngClass]="{'dark-theme': isDarkTheme | async}">
+    <app-header ></app-header>
+    <mat-card fxFlex>
+      <router-outlet class="hidden-router"></router-outlet>
+      <app-bottom-sheet></app-bottom-sheet>
+    </mat-card>
+    <app-footer></app-footer>
+  </div>

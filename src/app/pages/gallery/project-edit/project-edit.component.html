@@ -1,0 +1,45 @@
+<div class="container">
+    <mat-card class="project-card">
+        <form class="project-form" [formGroup]="projectForm">
+            <mat-form-field class="full-width">
+                <mat-label>Nazwa projektu</mat-label>
+                <input matInput formControlName="name" placeholder="Nazwa projektu" maxlength="64" required>
+                <mat-hint align="end">{{name.value.length}} / 64</mat-hint>
+                <mat-error *ngIf="name.errors?.required">Pole nie może zostać puste</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Link projektu</mat-label>
+                <input matInput formControlName="link" placeholder="Link projektu" maxlength="64" required>
+                <mat-hint align="start">Dozwolone małe litery, cyfry oraz znak "-", np.: dom-w-warszawie</mat-hint>
+                <mat-hint align="end">{{link.value.length}} / 64</mat-hint>
+                <mat-error *ngIf="link.errors?.required">Pole nie może zostać puste</mat-error>
+                <mat-error *ngIf="link.errors?.pattern">Dozwolone znaki to małe litery, cyfry oraz znak: "-"</mat-error>
+                <mat-error *ngIf="link.errors?.forbiddenValues">Nazwa {{link.value}} jest zajęta przez inny projekt</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Opis projektu</mat-label>
+                <textarea matInput class="about-area" formControlName="about" placeholder="Opis projektu" required></textarea>
+                <mat-error *ngIf="about.errors?.required">Pole nie może zostać puste</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Krótki opis projektu</mat-label>
+                <textarea matInput formControlName="aboutShort" placeholder="Krótki opis projektu" maxlength="256" required></textarea>
+                <mat-hint align="end">{{aboutShort.value.length}} / 256</mat-hint>
+                <mat-error *ngIf="aboutShort.errors?.required">Pole nie może zostać puste</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Data projektu</mat-label>
+                <input matInput formControlName="date" placeholder="Data projektu" maxlength="64">
+                <mat-hint align="end">{{date.value.length}} / 64</mat-hint>
+            </mat-form-field>
+        </form>
+        <mat-card-actions class="flex">
+            <button mat-button (click)="goBack()">Powrót (bez zapisu zmian)</button>
+            <span class="spacer"></span>
+            <button mat-button class="red" (click)="delete()">Usuń projekt</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+<button class="edit-button mat-accent" mat-fab aria-label="Save button" (click)="update()" [disabled]="!(projectForm.status==='VALID')" *ngIf="(isActive | async)">
+    <mat-icon class="header-icon">save</mat-icon>
+</button>
