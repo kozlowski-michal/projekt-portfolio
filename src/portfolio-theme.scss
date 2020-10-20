@@ -126,6 +126,7 @@ $light-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family:  Roboto, "Myriad-Pro", "Helvetica Neue", sans-serif; }
-a {color:inherit; text-decoration: none;}
+a { color:inherit; text-decoration: none; }
+.underline a { text-decoration: underline; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

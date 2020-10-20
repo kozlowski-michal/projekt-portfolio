@@ -47,8 +47,9 @@ export class AboutComponent implements OnInit {
   }
  
   update(){
-    this.db.updateAbout({text: this.aboutText})     // zaktualizowanie danych o firmie do bazy danych
+    /*this.db.updateAbout({text: this.aboutText})     // zaktualizowanie danych o firmie do bazy danych
     .then( () => this.info.msg("Zapisano zmiany.") )
-    .catch( (err) => this.info.msg("Błąd zapisu: " + err) );
+    .catch( (err) => this.info.msg("Błąd zapisu: " + err) );*/
+    this.info.msg("Zapisan zmian na tej stronie wyłączony. Wolałbym, by ten tekst nie został skasowany :) Wszystkie inne strony można edytować.")
   }
 }
