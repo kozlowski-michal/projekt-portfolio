@@ -16,7 +16,7 @@ export class EditModeService {
   constructor( private authenticationService: AuthenticationService ) {
     this.authenticationService.user.subscribe({                                 // serwis nasłuchuje, czy utrzymuje się stan zalogowania
       next: ( (user) => {                                                       // w przypadku braku zalogowania 
-        if (!user) this.isEditMode.next(false)
+        if (!user) this.isEditMode.next(false);
       })
     })
   }

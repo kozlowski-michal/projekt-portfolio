@@ -1,24 +1,28 @@
 <mat-toolbar class="mat-accent header-logo" role="heading">
-    <a routerLink="firma"><h1 >Pracownia Fajna</h1></a>
-    <span class="header-spacer"></span>
-    <a routerLink="pracownia">
-        <button mat-button aria-label="Link to about page" routerLinkActive="active">
-            O Pracowni
+    <a fxHide.xs routerLink="firma"><h1 >Pracownia Fajna</h1></a>
+    <span fxHide.xs class="header-spacer"></span>
+        <a routerLink="pracownia">
+            <button mat-button aria-label="Link to about page" routerLinkActive="active">
+                <span fxHide.xs>O Pracowni</span>
+                <mat-icon fxHide fxShow.xs class="header-icon">home</mat-icon>
+            </button>
+        </a>
+        <span fxHide.xs>|</span> 
+        <a routerLink="projekty">  
+            <button mat-button aria-label="Link to gallery page" routerLinkActive="active">
+                <span fxHide.xs>Projekty</span>
+                <mat-icon fxHide fxShow.xs class="header-icon">collections</mat-icon>
+            </button>
+        </a>
+        <span fxHide.xs>|</span> 
+        <a routerLink="kontakt">
+            <button mat-button aria-label="Link to caontact page" routerLinkActive="active">
+                <span fxHide.xs>Kontakt</span>
+                <mat-icon fxHide fxShow.xs class="header-icon">contact_mail</mat-icon>
+            </button>
+        </a> 
+        <span fxHide fxShow.xs class="header-spacer"></span>
+        <button mat-icon-button class="theme-button" aria-label="Changing theme button" (click)="changeTheme()">
+            <mat-icon class="header-icon">settings_brightness</mat-icon>
         </button>
-    </a>
-    | 
-    <a routerLink="projekty">  
-        <button mat-button aria-label="Link to gallery page" routerLinkActive="active">
-            Projekty
-        </button>
-    </a>
-    | 
-    <a routerLink="kontakt">
-        <button mat-button aria-label="Link to caontact page" routerLinkActive="active">
-            Kontakt
-        </button>
-    </a> 
-    <button mat-icon-button class="theme-button" aria-label="Changing theme button" (click)="changeTheme()">
-        <mat-icon class="header-icon">settings_brightness</mat-icon>
-    </button>
 </mat-toolbar>

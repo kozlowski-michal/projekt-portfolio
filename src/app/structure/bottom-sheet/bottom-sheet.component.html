@@ -19,7 +19,7 @@
     </div>
     <ng-template #logged>
         <p>Zalogowano jako {{(user | async)?.email}}</p>
-        <mat-slide-toggle (click)="toggleEditing()">Tryb edycji</mat-slide-toggle>
+        <mat-slide-toggle  [(ngModel)]="sliderState" (click)="toggleEditing()">Tryb edycji</mat-slide-toggle>
         <div style="height: 27px"></div>
         <button mat-flat-button color="primary" class="button-logged" (click)="resetPass()">Resetuj hasło</button>
         <button mat-flat-button color="primary" class="button-logged" (click)="logout()">Wyloguj</button>

@@ -19,7 +19,7 @@ export class BottomSheetComponent implements OnInit {
   isHidden: Observable<boolean>;  // czy menu jest schowane, czy wysunięte
   password: string;               // hasło wpisywane przez użytkownika
   user: Observable<User>;         // zmienna użytkownika serwisu logowania               
-  isEditMode: BehaviorSubject<boolean>;
+  sliderState: boolean;           // stan przycisku
 
   constructor(
     private authenticationService: AuthenticationService,   // serwis logowania
@@ -30,16 +30,20 @@ export class BottomSheetComponent implements OnInit {
   ngOnInit(): void {
     this.isHidden = this.editSerive.isMenuHidden;
     this.user = this.authenticationService.user;
-    this.isEditMode = this.editSerive.isEditMode;
+    this.sliderState = this.editSerive.isEditMode.value;
   }
  
   toggleEditing(): void{            // funkcja włączająca/wyłączająca tryb edycji.
-    this.editSerive.isEditMode.next(!this.editSerive.isEditMode.value)
+    this.editSerive.isEditMode.next(!this.sliderState);
   }
 
   login(): void{
     this.authenticationService.login(this.password)
-    .then( () => { this.info.msg("Zalogowano!"), this.password = "" })
+    .then( () => { 
+      this.sliderState = this.editSerive.isEditMode.value;
+      this.password = "";
+      this.info.msg("Zalogowano!");
+    })
     .catch(err => this.info.msg("Nie udało się zalogować: " + err) );
   }
 
