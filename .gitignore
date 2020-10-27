@@ -2,6 +2,8 @@
 
 #environments, cause of login information
 /src/environments
+/.firebase
+/e2e
 
 # compiled output
 /dist

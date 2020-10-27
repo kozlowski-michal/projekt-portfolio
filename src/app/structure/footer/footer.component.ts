@@ -16,7 +16,7 @@ export class FooterComponent {
   constructor(private editSerive: EditModeService) { }
 
   toggleBottomSheet(): void { // funkcja wysuwająca/chowająca menu użytkownika. Rozdzielona na 2 przypadki, by zapobiec desynchronizacji z przyciskiem.
-    if (this.editSerive.isMenuHidden.value == false) this.editSerive.isMenuHidden.next(true)
-    else this.editSerive.isMenuHidden.next(false)
-  }
+    this.editSerive.isMenuHidden.next(
+      this.editSerive.isMenuHidden.value ? false : true
+  )}
 }
