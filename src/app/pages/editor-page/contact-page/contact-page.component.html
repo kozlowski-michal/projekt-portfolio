@@ -1,0 +1,11 @@
+<mat-card fxFlex>
+    <div *ngIf="(isActive | async); else showText">
+        <ckeditor [(ngModel)]="contactText" [config]="config" [editor]="Editor" class="cke-color"></ckeditor>
+        <button class="edit-button mat-accent" mat-fab aria-label="Save button" (click)="update()">
+            <mat-icon class="header-icon">save</mat-icon>
+        </button>
+    </div>
+    <ng-template #showText>
+        <div [innerHTML]="contactText" class="underline"></div>
+    </ng-template>
+</mat-card>

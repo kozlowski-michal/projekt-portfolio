@@ -4,7 +4,7 @@
 //*************************************************************************************************//
 import { Component, OnInit } from '@angular/core';
 import { User } from 'firebase';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { EditModeService } from 'src/app/services/edit-mode.service';
 import { InfoService } from 'src/app/services/info.service';
@@ -44,7 +44,7 @@ export class BottomSheetComponent implements OnInit {
       this.password = "";
       this.info.msg("Zalogowano!");
     })
-    .catch(err => this.info.msg("Nie udało się zalogować: " + err) );
+    .catch(err => this.info.msg("Nie udało się zalogować. " + err) );
   }
 
   logout(): void{

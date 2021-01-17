@@ -6,7 +6,7 @@
 //*************************************************************************************************//
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { auth, User } from 'firebase';
+import { auth, User } from 'firebase/app';
 import { Observable } from 'rxjs/index'
 
 @Injectable({providedIn: 'root'})
@@ -20,12 +20,12 @@ export class AuthenticationService {
   get user(): Observable<User> {
     return this.fireAuth.user;
   }
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   login(password): Promise<firebase.auth.UserCredential> {
-    return this.fireAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL).then( () => {
-      return this.fireAuth.auth.signInWithEmailAndPassword(this.email, password)
-    }).catch(err => {return err});
+    return this.fireAuth.auth.setPersistence(auth.Auth.Persistence.LOCAL)
+    .then( () => this.fireAuth.auth.signInWithEmailAndPassword(this.email, password))
   }
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   logout(): Promise<void> {
     return this.fireAuth.auth.signOut();

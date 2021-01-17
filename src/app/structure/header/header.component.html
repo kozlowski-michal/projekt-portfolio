@@ -1,28 +1,41 @@
-<mat-toolbar class="mat-accent header-logo" role="heading">
-    <a fxHide.xs routerLink="firma"><h1 >Pracownia Fajna</h1></a>
-    <span fxHide.xs class="header-spacer"></span>
-        <a routerLink="pracownia">
-            <button mat-button aria-label="Link to about page" routerLinkActive="active">
-                <span fxHide.xs>O Pracowni</span>
-                <mat-icon fxHide fxShow.xs class="header-icon">home</mat-icon>
-            </button>
-        </a>
-        <span fxHide.xs>|</span> 
-        <a routerLink="projekty">  
-            <button mat-button aria-label="Link to gallery page" routerLinkActive="active">
-                <span fxHide.xs>Projekty</span>
-                <mat-icon fxHide fxShow.xs class="header-icon">collections</mat-icon>
-            </button>
-        </a>
-        <span fxHide.xs>|</span> 
-        <a routerLink="kontakt">
-            <button mat-button aria-label="Link to caontact page" routerLinkActive="active">
-                <span fxHide.xs>Kontakt</span>
-                <mat-icon fxHide fxShow.xs class="header-icon">contact_mail</mat-icon>
-            </button>
-        </a> 
-        <span fxHide fxShow.xs class="header-spacer"></span>
-        <button mat-icon-button class="theme-button" aria-label="Changing theme button" (click)="changeTheme()">
-            <mat-icon class="header-icon">settings_brightness</mat-icon>
+<mat-toolbar class="header-logo mat-primary" role="heading">
+    <a routerLink="" class="no-underline">
+        <mat-icon class="logo-icon">wb_shade</mat-icon>
+        <h1 fxHide fxShow.gt-sm>
+            Pracownia <br/>
+            Architektoniczna
+        </h1>
+    </a>
+    <span fxHide fxShow.gt-sm class="header-spacer"></span>
+    <a routerLink="info">
+        <button mat-button color="warn" aria-label="Link to info page" routerLinkActive="active">
+            <span fxHide fxShow.gt-sm>Informacje o projekcie</span>
+            <mat-icon fxShow.gt-sm="false" class="header-icon">info</mat-icon>
         </button>
+    </a>        
+    <span fxHide fxShow.gt-sm>|</span> 
+    <a routerLink="pracownia">
+        <button mat-button aria-label="Link to about page" routerLinkActive="active">
+            <span fxHide fxShow.gt-sm>O Pracowni</span>
+            <mat-icon fxShow.gt-sm="false" class="header-icon">home</mat-icon>
+        </button>
+    </a>
+    <span fxHide fxShow.gt-sm>|</span> 
+    <a routerLink="projekty">  
+        <button mat-button aria-label="Link to gallery page" routerLinkActive="active">
+            <span fxHide fxShow.gt-sm>Projekty</span>
+            <mat-icon fxShow.gt-sm="false" class="header-icon">collections</mat-icon>
+        </button>
+    </a>
+    <span fxHide fxShow.gt-sm>|</span> 
+    <a routerLink="kontakt">
+        <button mat-button aria-label="Link to contact page" routerLinkActive="active">
+            <span fxHide fxShow.gt-sm>Kontakt</span>
+            <mat-icon fxShow.gt-sm="false" class="header-icon">contact_mail</mat-icon>
+        </button>
+    </a> 
+    <span fxShow.gt-sm="false" class="header-spacer"></span>
+    <button mat-icon-button class="theme-button" aria-label="Changing theme button" (click)="changeTheme()">
+        <mat-icon class="header-icon">settings_brightness</mat-icon>
+    </button>
 </mat-toolbar>

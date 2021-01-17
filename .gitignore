@@ -1,9 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-#environments, cause of login information
+#custom
 /src/environments
+/src/assets
 /.firebase
 /e2e
+.editorconfig
+.firebaserc
+firebase.json
 
 # compiled output
 /dist

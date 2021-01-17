@@ -14,7 +14,7 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class WrapperComponent implements OnInit {
 
-  isDarkTheme: Observable<boolean>; //zmienna nasłuchująca zmiany motywu
+  isDarkTheme: Observable<boolean>; // zmienna nasłuchująca zmiany motywu
 
   constructor(private themeService: ThemeService) {}
 

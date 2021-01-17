@@ -1,5 +1,5 @@
 <mat-card [ngClass]="{'bottom-sheet': true, 'bottom-sheet-hidden': isHidden | async}">
-    <mat-toolbar color="accent" class="bottom-sheet-title">
+    <mat-toolbar color="primary" class="bottom-sheet-title">
         Zarządzaj
     </mat-toolbar>
     <div class="bottom-sheet-content">
@@ -9,11 +9,11 @@
                     <mat-label>Hasło</mat-label>
                     <input name="pass" [(ngModel)]="password" matInput type="password">
                 </mat-form-field>
-                <button class="submit-button" color="primary" mat-fab aria-label="Login" (click)="login()">
+                <button class="submit-button" color="accent" mat-fab aria-label="Login" (click)="login()">
                     <mat-icon class="header-icon">done</mat-icon>
                 </button>
                 <div style="height: 27px"></div>
-                <button mat-flat-button color="primary" (click)="resetPass()">Resetuj hasło</button>
+                <button mat-flat-button color="accent" (click)="resetPass()">Resetuj hasło</button>
             </form>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <p>Zalogowano jako {{(user | async)?.email}}</p>
         <mat-slide-toggle  [(ngModel)]="sliderState" (click)="toggleEditing()">Tryb edycji</mat-slide-toggle>
         <div style="height: 27px"></div>
-        <button mat-flat-button color="primary" class="button-logged" (click)="resetPass()">Resetuj hasło</button>
-        <button mat-flat-button color="primary" class="button-logged" (click)="logout()">Wyloguj</button>
+        <button mat-flat-button color="accent" class="button-logged" (click)="resetPass()">Resetuj hasło</button>
+        <button mat-flat-button color="accent" class="button-logged" (click)="logout()">Wyloguj</button>
     </ng-template>
 </mat-card>

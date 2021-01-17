@@ -29,7 +29,7 @@ describe('WrapperComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should have created WrapperComponent', () => {
+  xit('should have created WrapperComponent', () => {
     expect(component).toBeTruthy();
   });
 

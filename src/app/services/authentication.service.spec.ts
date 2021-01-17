@@ -1,9 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AuthenticationService } from './authentication.service';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { BehaviorSubject } from 'rxjs';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+class MockAngularFireAuth {//dodać extends
+  get user(){
+    return {id: "user"};
+  }
+}
 
 describe('AuthenticationService', () => {
   let service: AuthenticationService;
@@ -12,7 +15,7 @@ describe('AuthenticationService', () => {
     TestBed.configureTestingModule({
       providers: [
         AuthenticationService,
-        //{ provide: AngularFirestore, useValue: FirestoreStub },
+        { provide: AngularFireAuth, useValue: MockAngularFireAuth },
       ],
     });
     service = TestBed.inject(AuthenticationService);
